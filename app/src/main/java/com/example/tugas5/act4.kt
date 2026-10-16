@@ -99,4 +99,18 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
             thickness = dimensionResource(id = R.dimen.diveder_tipis)
         )
 
-       
+        Button(
+            modifier = Modifier.fillMaxWidth(),
+            enabled = textNama.isNotBlank() && textAlamat.isNotBlank() && textJK.isNotEmpty(),
+            onClick = {
+                namaSubmitted = textNama
+                jenisSubmitted = textJK
+                alamatSubmitted = textAlamat
+            }
+        ) {
+            Text(text = "Submit")
+        }
+
+        // Output Card displaying submitted data
+        if (namaSubmitted.isNotEmpty()) {
+            Spacer(modifier = Modifier.height(16.dp))
