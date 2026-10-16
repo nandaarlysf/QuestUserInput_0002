@@ -83,3 +83,20 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
             }
         }
 
+        Spacer(modifier = Modifier.height(8.dp))
+
+        OutlinedTextField(
+            value = textAlamat,
+            onValueChange = { textAlamat = it },
+            singleLine = true,
+            shape = MaterialTheme.shapes.large,
+            modifier = Modifier.fillMaxWidth(),
+            label = { Text("Alamat") }
+        )
+
+        HorizontalDivider(
+            modifier = Modifier.padding(vertical = dimensionResource(id = R.dimen.padding_medium)),
+            thickness = dimensionResource(id = R.dimen.diveder_tipis)
+        )
+
+       
