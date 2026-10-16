@@ -114,3 +114,21 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
         // Output Card displaying submitted data
         if (namaSubmitted.isNotEmpty()) {
             Spacer(modifier = Modifier.height(16.dp))
+
+            ElevatedCard(
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Column(modifier = Modifier.padding(16.dp)) {
+                    Text(
+                        text = "Data Diri Terdaftar",
+                        style = MaterialTheme.typography.titleMedium
+                    )
+                    HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
+                    Text(text = "Nama: $namaSubmitted")
+                    Text(text = "Jenis Kelamin: $jenisSubmitted")
+                    Text(text = "Alamat: $alamatSubmitted")
+                }
+            }
+        }
+    }
+}
