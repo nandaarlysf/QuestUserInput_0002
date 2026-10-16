@@ -59,3 +59,27 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
 
         Spacer(modifier = Modifier.height(8.dp))
 
+        // Radio Buttons for Gender Selection
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Start
+        ) {
+            genderList.forEach { item ->
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier
+                        .selectable(
+                            selected = (textJK == item),
+                            onClick = { textJK = item }
+                        )
+                        .padding(horizontal = 8.dp)
+                ) {
+                    RadioButton(
+                        selected = (textJK == item),
+                        onClick = { textJK = item }
+                    )
+                    Text(text = item)
+                }
+            }
+        }
+
